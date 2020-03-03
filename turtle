@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string letterGrade;
+    double numbergrade;
+
+    cout << "Enter a letter grade: ";
+    cin >> letterGrade;
+
+    if (letterGrade[0] == 'A') {
+        numbergrade = 4.0;
+    }
+    else if (letterGrade[0] == 'B') {
+        numbergrade = 3.0;
+    }
+    else if (letterGrade[0] == 'C') {
+        numbergrade = 2.0;
+    }
+    else if (letterGrade[0] == 'D') {
+        numbergrade = 1.0;
+    }
+    else if (letterGrade[0] == 'F') {
+        numbergrade = 0.0;
+    }
+
+    if (letterGrade.length() == 2) {
+        if (letterGrade[1] == '+' && letterGrade[0] != 'A' && letterGrade[0] != 'F') {
+            numbergrade += 0.3;
+        }
+        else if (letterGrade[1] == '-' && letterGrade[0] != 'F') {
+            numbergrade -= 0.3;
+        }
+    }
+
+    cout << numbergrade <<endl;
+
+    return 0;
+}
